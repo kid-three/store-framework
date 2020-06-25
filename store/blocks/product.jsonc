@@ -47,8 +47,8 @@
   },
   "sku-selector": {
     "props": {
-      "initialSelection": 0,
-      "showValueNameForImageVariation": true,
+      "initialSelection": "empty",
+      "showVariationsLabels": true,
       "showVariationsErrorMessage": true
     }
   }
