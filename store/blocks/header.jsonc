@@ -6,20 +6,16 @@
     "blocks": ["header-layout.desktop", "header-layout.mobile"]
   },
 
+  // DESKTOP
+  // -------------------------------
   "header-layout.desktop": {
-    "children": ["header-row#notification", "header-row#main"]
-  },
-
-  "header-layout.mobile": {
     "children": [
       "header-row#notification",
-      "header-row#main-mobile",
-      "header-row#search"
+      "header-row#main",
+      "header-row#menu"
     ]
   },
-  "header-row#notification": {
-    "children": ["header-spacer", "rich-text#header", "header-spacer"]
-  },
+  // -------------------------------
   "header-row#main": {
     "children": ["logo", "header-spacer", "search-bar", "minicart", "login"],
     "props": {
@@ -28,32 +24,60 @@
       "fullWidth": false
     }
   },
-  "header-row#main-mobile": {
-    "children": ["logo", "header-spacer", "minicart", "login"],
-
+  // -------------------------------
+  "logo": {
     "props": {
-      "sticky": true,
-      "inverted": true
+      "url": "https://appliancetheme.vteximg.com.br/assets/vtex.file-manager-graphql/images/flatflat___6081e50402943bcb11bc45a8e613aa72.png"
     }
   },
-
-  "header-row#search": {
-    "children": ["search-bar"],
-    "props": {
-      "sticky": true
-    }
-  },
+  // -------------------------------
   "login": {
     "props": {
       "showIconProfile": true,
       "iconLabel": "Login"
     }
   },
-  "logo": {
+  // -------------------------------
+  // See menu in `/store/blocks/menu.jsonc`
+  "header-row#menu": {
+    "children": [
+      "header-spacer",
+      "vtex.menu@2.x:menu#categories",
+      "header-spacer"
+    ]
+  },
+
+  // MOBILE
+  // -------------------------------
+  "header-layout.mobile": {
+    "children": [
+      "header-row#notification",
+      "header-row#main-mobile",
+      "header-row#search"
+    ]
+  },
+  // -------------------------------
+  "header-row#main-mobile": {
+    "children": ["drawer", "logo", "header-spacer", "minicart", "login"],
     "props": {
-      "url": "https://appliancetheme.vteximg.com.br/assets/vtex.file-manager-graphql/images/flatflat___6081e50402943bcb11bc45a8e613aa72.png"
+      "sticky": true,
+      "inverted": true
     }
   },
+  // -------------------------------
+  "header-row#search": {
+    "children": ["search-bar"],
+    "props": {
+      "sticky": true
+    }
+  },
+
+  // SHARED
+  // -------------------------------
+  "header-row#notification": {
+    "children": ["header-spacer", "rich-text#header", "header-spacer"]
+  },
+  // -------------------------------
   "rich-text#header": {
     "props": {
       "text": "**Free Shipping on orders over $50**",
